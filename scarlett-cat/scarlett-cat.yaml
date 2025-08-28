@@ -1,0 +1,15 @@
+esphome:
+  name: scarlett_cat
+
+external_components:
+  - source: github://tonrepo/esphome-scarlett-cat
+    components: [ scarlett_cat ]
+
+scarlett_cat:
+  feeder_pins:
+    forward: 33
+    backward: 12
+    start_button: 32
+    count_button: 26
+  camera: true
+  api_upload_url: "http://192.168.1.3/scarlett-cat/upload.php?apikey=XXXX"
