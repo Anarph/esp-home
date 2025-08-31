@@ -1,0 +1,18 @@
+esphome:
+  name: scarlett_cat
+  platform: ESP32
+  board: esp32dev
+
+external_components:
+  - source: github://Anarph/esp-home
+    components: [scarlett_cat]
+
+
+binary_sensor:
+  - platform: custom
+    lambda: |-
+      auto sensor = new IRLevelSensor(17, 18);
+      App.register_component(sensor);
+      return {sensor->binary_sensor};
+    binary_sensors:
+      name: "Contenant Vide"
